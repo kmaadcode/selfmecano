@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+}
+
+.menu {
+  flex: 1;
+  background-color: var(--bgSoft);
+  padding: 20px;
+}
+
+.content {
+  flex: 4;
+}
+
+.wapper {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.main {
+}
+
+.cards {
+}
+
+.side {
+}
