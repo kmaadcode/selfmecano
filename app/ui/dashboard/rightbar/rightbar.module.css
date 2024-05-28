@@ -4,7 +4,7 @@
 .item {
   position: relative;
   background: linear-gradient(to top, #182237, #253352);
-  padding: 20px 25px;
+  padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -41,7 +41,6 @@
   padding: 10px;
   display: flex;
   align-items: center;
-
   gap: 10px;
   background-color: #5d57c9;
   color: white;
