@@ -3,7 +3,7 @@
 
   const Transactions = () => {
     return (
-      <div clsName={styles.container}>
+      <div className={styles.container}>
         <h2 className={styles.title}>LATEST Transactions</h2>      
       <table className={styles.table}>
         <thead>
