@@ -6,10 +6,10 @@ const Card = () => {
     <div className={styles.container}>
       <MdSupervisedUserCircle size={24} />
       <div className={styles.texts}>
-        <span className={styles.title}>Total Users</span>
+        <span className={styles.title}>Client Total</span>
         <span className={styles.number}>10.73</span>
-        <span className={styles.title}>
-          <span className={styles.detail}>12%</span>more than previous
+        <span className={styles.detail}>
+          <span className={styles.positive}>12%</span> plus que prévus
         </span>
       </div>
     </div>
