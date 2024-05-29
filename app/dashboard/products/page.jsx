@@ -16,11 +16,11 @@ const ProductsPage = () => {
       <table className={styles.table}>
         <thead className={styles.table}>
           <tr>
-            <td>Title</td>
-            <td>Reference</td>
+            <td>Titre</td>
+            <td>Référence</td>
             <td>Description</td>
-            <td>Price</td>
-            <td>Created At</td>
+            <td>Prix</td>
+            <td>Date Commande</td>
             <td>Stock</td>
             <td>Status</td>
             <td>Action</td>
