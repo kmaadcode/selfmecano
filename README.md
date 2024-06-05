@@ -6,7 +6,7 @@ Développement de la console d'adminstration pour la plateforme  <<.....>>.
 Self <<...>> est un portail qui a pour objectif principal de permettre à un
 particulier de réserver un créneau horaire pour faire l'entretien de sa voiture
 lui-même ou par une personne de son choix, de pouvoir commander des pièces etc...
-L'objectif produit est de réaliser un portail web pour gérer et développer l'activité Self.
+
 
 
 
