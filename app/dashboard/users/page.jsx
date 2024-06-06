@@ -1,10 +1,18 @@
+import { deleteUser } from "@/app/lib/actions";
+import { fetchUsers } from "@/app/lib/data";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import Search from "@/app/ui/dashboard/search/search";
 import styles from "@/app/ui/dashboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-const UsersPage = () => {
+
+const UsersPage = async ({ searchParams }) => {
+  const q = searchParams?.q || "";
+  const page = searchParams?.page || 1;
+  const {count, users} = await fetchUsers(q, page);
+  
+  console.log(users);  
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -18,42 +26,57 @@ const UsersPage = () => {
           <tr>
             <td>Name</td>
             <td>Email</td>
-            <td>Created At</td>
+            <td>N°</td>
+            <td>Rue</td>
+            <td>Code Postal</td>
+            <td>Ville</td>
+            <td>Enregistrement</td>
+            <td>Mise à jour</td>
             <td>Role</td>
             <td>Status</td>
             <td>Action</td>
           </tr>
         </thead>
         <tbody className={styles.table}>
-          <tr>
+          {users.map((user) => (
+          <tr key={user.id}>
             <td>
               <div className={styles.user}>
                 <Image
-                  src="/noavatar.png"
+                  src={user.img || "/noavatar.png"}
                   alt=""
                   width={40}
                   height={40}
                   className={styles.userImage}
                 />
-                Mario Bros
+                {user.username}
               </div>
             </td>
-            <td>mario@gmail.com</td>
-            <td>24.11.2013</td>
-            <td>Admin</td>
-            <td>active</td>
+            <td>{user.email}</td>
+            <td>{user.streetNber}</td>
+            <td>{user.streetName}</td>
+            <td>{user.zipcode}</td>
+            <td>{user.city}</td>
+            <td>{user.createdAt?.toString().slice(4,16)}</td>
+            <td>{user.updatedAt?.toString().slice(4,16)}</td>
+            <td>{user.isAdmin ? "Admin" : "Client"}</td>
+            <td>{user.isActive ? "active" : "passive"}</td>
             <td>
               <div className={styles.buttons}>
-                <Link href="./users/singleUserPage">
+                <Link href={`/dashboard/users/${user.id}`}>
                   <button className={`${styles.button} ${styles.view}`}>View</button>
-                </Link>
-                  <button className={`${styles.button} ${styles.delete}`}>Delete</button>
+                  </Link>
+                  <form action={deleteUser}>
+                    <input type="hidden" name="id" value={user.id} />
+                    <button className={`${styles.button} ${styles.delete}`}>Delete</button>
+                  </form>
               </div>
             </td>            
-          </tr>
+            </tr>
+            ))}
         </tbody>
       </table>
-      <Pagination />
+      <Pagination count={count} />
     </div>
   )
 };

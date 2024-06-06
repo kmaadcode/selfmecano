@@ -4,6 +4,7 @@
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
+  flex-direction: column;
 }
 
 .form {
@@ -15,7 +16,7 @@
 .form input,
 .form textarea,
 .form select {
-  padding: 30px;
+  padding: 15px;
   background-color: var(--bg);
   color: var(--text);
   border: 2px solid var(--bgc);
@@ -23,13 +24,42 @@
   margin-bottom: 30px;
 }
 
-.form input,
+.form input {
+  width: 45%;
+}
 .form select {
   width: 45%;
 }
 
-.form textarea {
+.adress {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
+}
+
+.adressItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.adressItem input {
+  justify-content: space-between;
+}
+
+.label {
+  padding-bottom: 20px;
+  font-size: 18px;
+}
+
+.adressItem label,
+.adressItem input {
+  width: 100%;
+  gap: 10px;
+}
+.label1 {
 }
 
 .form button {
