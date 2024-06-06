@@ -1,11 +1,14 @@
 ## Présentation
 
-## Projet Self Mécanomania
+## Projet Self ......
 
-Développement de la console d'aminstration pour la plateforme Self Mécanomania.
-Self Mécanomania est un portail qui a pour objectif principal de permettre à un
+Développement de la console d'adminstration pour la plateforme  <<.....>>.
+Self <<...>> est un portail qui a pour objectif principal de permettre à un
 particulier de réserver un créneau horaire pour faire l'entretien de sa voiture
-lui-même ou par une personne de son choix :
+lui-même ou par une personne de son choix, de pouvoir commander des pièces etc...
+
+
+
 
 ## Getting Started
 
