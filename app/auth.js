@@ -8,8 +8,7 @@ import bcrypt from "bcrypt";
 const login = async (credentials) => {
   try {
     connectToDB();
-    const user = await User.findOne({ username: credentials.username });
-    console.log(user + "$$$$$$ in const login $$$$$$$$$ ");
+    const user = await User.findOne({ username: credentials.username });   
     if (!user) throw new Error("Wrong credentials!");
 
     const isPasswordCorrect = await bcrypt.compare(
@@ -31,8 +30,7 @@ export const { signIn, signOut, auth } = NextAuth({
     CredentialsProvider({
       async authorize(credentials) {
         try {
-          const user = await login(credentials);
-          console.log(user + " ***** in CredentialsProvider : const signIn ***");
+          const user = await login(credentials);         
           return user;
         } catch (err) {
           return null;
