@@ -1,6 +1,11 @@
 
 export const authConfig = {
-  providers:[],
+  providers:[
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: precess.env.GITHUB_SECRET      
+    }),
+  ],
   pages: {
     signIn: "/login",
   },
